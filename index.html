@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Happy Birthday 💗</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card" id="card">
+    <img id="mono" class="page active" src="page1-mono.png" alt="Birthday card first page, monochrome">
+    <img id="color" class="page" src="page1-color.png" alt="Birthday card first page, colorful">
+
+    <!-- Invisible clickable area over the 23 -->
+    <button id="twentyThree" class="hotspot" aria-label="Tap 23 to reveal the birthday colors"></button>
+
+    <div id="hint" class="hint">tap 23 ✦</div>
+
+    <div id="sparkles" class="sparkles" aria-hidden="true"></div>
+
+    <button id="openButton" class="open-button" type="button">open me bhomdu ♡</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
