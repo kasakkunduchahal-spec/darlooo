@@ -1,26 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Happy Birthday 💗</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Card</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <main class="card" id="card">
-    <img id="mono" class="page active" src="page1-mono.png" alt="Birthday card first page, monochrome">
-    <img id="color" class="page" src="page1-color.png" alt="Birthday card first page, colorful">
 
-    <!-- Invisible clickable area over the 23 -->
-    <button id="twentyThree" class="hotspot" aria-label="Tap 23 to reveal the birthday colors"></button>
+  <main class="card">
 
-    <div id="hint" class="hint">tap 23 ✦</div>
+    <!-- Your original monochrome page -->
+    <img src="page1-mono.png" class="background mono" alt="Birthday card">
 
-    <div id="sparkles" class="sparkles" aria-hidden="true"></div>
+    <!-- Your colorful page -->
+    <img src="page1-color.png" class="background color" alt="Birthday card">
 
-    <button id="openButton" class="open-button" type="button">open me bhomdu ♡</button>
+    <!-- Interactive elements -->
+    <img src="23.png" class="element number23" alt="23">
+
+    <img src="cat.png" class="element cat" alt="Cat">
+
+    <img src="cap.png" class="element cap" alt="Birthday cap">
+
+    <button class="open-button" id="openButton">
+      open me bhomdu ♡
+    </button>
+
   </main>
 
   <script src="script.js"></script>
+
 </body>
 </html>
