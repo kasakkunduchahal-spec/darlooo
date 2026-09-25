@@ -18,7 +18,7 @@ body {
   overflow: hidden;
 }
 
-/* Main page images */
+/* Main card pages */
 .background {
   position: absolute;
   inset: 0;
@@ -38,45 +38,41 @@ body {
   z-index: 2;
 }
 
-/* Individual animated elements */
+/* Your Canva element PNGs */
 .element {
   position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   pointer-events: none;
-  transition:
-    transform 0.7s cubic-bezier(.2,.8,.2,1),
-    opacity 0.7s ease;
 }
 
-/*
-  These positions are intentionally approximate for the first test.
-  We'll fine-tune them once we see your actual result.
-*/
+/* Keep the elements above the card */
+.cat {
+  z-index: 4;
+}
 
 .number23 {
-  width: 32%;
-  left: 34%;
-  top: 58%;
   z-index: 5;
-  cursor: pointer;
   pointer-events: auto;
-}
-
-.cat {
-  width: 22%;
-  left: 8%;
-  top: 24%;
-  z-index: 4;
+  cursor: pointer;
 }
 
 .cap {
-  width: 15%;
-  left: 65%;
-  top: 25%;
   z-index: 4;
 }
 
-/* Small movement when activated */
+/* Color transition */
+.card.active .background.mono {
+  opacity: 0;
+}
 
+.card.active .background.color {
+  opacity: 1;
+}
+
+/* Animations */
 .card.active .number23 {
   animation: numberPop 0.8s ease;
 }
@@ -87,16 +83,6 @@ body {
 
 .card.active .cap {
   animation: capWiggle 0.9s ease;
-}
-
-/* Color page appears after clicking */
-
-.card.active .background.mono {
-  opacity: 0;
-}
-
-.card.active .background.color {
-  opacity: 1;
 }
 
 /* Button */
@@ -112,7 +98,6 @@ body {
 
   border: none;
   padding: 12px 22px;
-
   border-radius: 999px;
 
   background: #fff8f0;
@@ -126,8 +111,6 @@ body {
   transition:
     opacity 0.8s ease,
     transform 0.8s ease;
-
-  cursor: pointer;
 }
 
 .card.active .open-button {
@@ -144,11 +127,11 @@ body {
   }
 
   40% {
-    transform: scale(1.12);
+    transform: scale(1.08);
   }
 
   70% {
-    transform: scale(0.96);
+    transform: scale(0.97);
   }
 
   100% {
@@ -180,11 +163,11 @@ body {
   }
 
   30% {
-    transform: rotate(-7deg);
+    transform: rotate(-5deg);
   }
 
   60% {
-    transform: rotate(6deg);
+    transform: rotate(4deg);
   }
 
   100% {
