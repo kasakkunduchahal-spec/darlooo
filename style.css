@@ -18,24 +18,15 @@ body {
   overflow: hidden;
 }
 
-/* Main card pages */
+/* Clean stationary base */
 .background {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: opacity 1.2s ease;
-}
-
-.background.mono {
-  opacity: 1;
   z-index: 1;
-}
-
-.background.color {
-  opacity: 0;
-  z-index: 2;
+  pointer-events: none;
 }
 
 /* Your Canva element PNGs */
@@ -48,7 +39,7 @@ body {
   pointer-events: none;
 }
 
-/* Keep the elements above the card */
+/* Keep animated elements above the base */
 .cat {
   z-index: 4;
 }
@@ -61,19 +52,6 @@ body {
 
 .cap {
   z-index: 4;
-}
-
-/* Color transition */
-.card.active .background.mono {
-  opacity: 0;
-}
-
-}.card.active .background.color {
-  opacity: 0;
-}
-
-.card.show-color .background.color {
-  opacity: 1;
 }
 
 /* Animations */
@@ -123,8 +101,7 @@ body {
   transform: translateX(-50%) translateY(0);
 }
 
-/* Animations */
-
+/* Number animation */
 @keyframes numberPop {
   0% {
     transform: scale(1);
@@ -143,6 +120,7 @@ body {
   }
 }
 
+/* Cat animation */
 @keyframes catBounce {
   0% {
     transform: translateY(0) rotate(0deg);
@@ -161,6 +139,7 @@ body {
   }
 }
 
+/* Cap animation */
 @keyframes capWiggle {
   0% {
     transform: rotate(0deg);
