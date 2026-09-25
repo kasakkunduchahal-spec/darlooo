@@ -68,7 +68,11 @@ body {
   opacity: 0;
 }
 
-.card.active .background.color {
+}.card.active .background.color {
+  opacity: 0;
+}
+
+.card.show-color .background.color {
   opacity: 1;
 }
 
