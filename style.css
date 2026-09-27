@@ -19,7 +19,7 @@ body {
 }
 
 /* =========================
-   BASE IMAGES
+   CLEAN BASES
    ========================= */
 
 .background {
@@ -31,24 +31,26 @@ body {
   pointer-events: none;
 }
 
-/* Clean monochrome base */
+/* Monochrome base */
 .background.base {
   z-index: 1;
+  opacity: 1;
 }
 
-/* Color version */
+/* Color base */
 .background.color {
   z-index: 2;
   opacity: 0;
   transition: opacity 1.2s ease;
 }
 
+/* Fade into color */
 .card.show-color .background.color {
   opacity: 1;
 }
 
 /* =========================
-   CANVA ELEMENTS
+   ELEMENTS
    ========================= */
 
 .element {
@@ -152,6 +154,7 @@ body {
 .open-button {
   position: absolute;
   z-index: 10;
+
   left: 50%;
   bottom: 7%;
 
