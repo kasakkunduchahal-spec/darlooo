@@ -1,15 +1,170 @@
-const card = document.querySelector(".card");
-const number23 = document.querySelector(".number23");
-const openButton = document.querySelector("#openButton");
+* {
+  box-sizing: border-box;
+}
 
-number23.addEventListener("click", () => {
-  card.classList.add("active");
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #f5f0e8;
+}
 
-  setTimeout(() => {
-    card.classList.add("show-color");
-  }, 1200);
-});
+.card {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
 
-openButton.addEventListener("click", () => {
-  alert("Stage 1 works! 💗");
-});
+/* CLEAN BASE — stays completely stationary */
+.background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* YOUR CANVA ELEMENTS */
+.element {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Cat */
+.cat {
+  z-index: 4;
+}
+
+/* 23 — clickable */
+.number23 {
+  z-index: 5;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* Birthday cap */
+.cap {
+  z-index: 4;
+}
+
+/* =========================
+   ELEMENT ANIMATIONS
+   ========================= */
+
+.card.active .number23 {
+  animation: numberPop 0.8s ease;
+}
+
+.card.active .cat {
+  animation: catBounce 1.1s ease;
+}
+
+.card.active .cap {
+  animation: capWiggle 0.9s ease;
+}
+
+/* 23 pops */
+@keyframes numberPop {
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1.08);
+  }
+
+  70% {
+    transform: scale(0.97);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Cat gently bounces */
+@keyframes catBounce {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  35% {
+    transform: translateY(-12px) rotate(-2deg);
+  }
+
+  65% {
+    transform: translateY(3px) rotate(2deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* Cap wiggles */
+@keyframes capWiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  30% {
+    transform: rotate(-5deg);
+  }
+
+  60% {
+    transform: rotate(4deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* =========================
+   OPEN BUTTON
+   ========================= */
+
+.open-button {
+  position: absolute;
+  z-index: 10;
+
+  left: 50%;
+  bottom: 7%;
+
+  transform: translateX(-50%) translateY(20px);
+
+  opacity: 0;
+  pointer-events: none;
+
+  border: none;
+  padding: 12px 22px;
+  border-radius: 999px;
+
+  background: #fff8f0;
+  color: #5d4a43;
+
+  font-family: Georgia, serif;
+  font-size: 17px;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.card.active .open-button {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
